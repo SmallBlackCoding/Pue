@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <style>
+        #app{
+            margin: 50px auto;
+            width: 400px;
+        }
+        button{
+            width: 80px;
+            height: 40px;
+            background:skyblue;
+            border-radius: 10px;
+            margin: 10px;
+            border: none;
+        }
+    </style>
+    <script src="pue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>{{title}}</h1>
+    <input type="text" p-model="name">
+    <p>{{name}}</p>
+    <button p-on:click="clickMe">点我</button>
+
+</div>
+<script>
+    var pue=new Pue({
+        el:'#app',
+        data:{
+            title:'hello world',
+            name:'大熊妹子'
+        },
+        methods:{
+            clickMe:function () {
+                this.title='世界你好吗';
+            },
+            fuckMe:function () {
+                console.log(this.methods);
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
